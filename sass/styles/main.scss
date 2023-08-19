@@ -70,6 +70,8 @@ nav{
         display: flex;
         align-items: center;
         gap: 20px;
+        position: relative;
+
 
         .menu-list{
             display: flex;
@@ -87,6 +89,15 @@ nav{
 
                 .text{
                     margin: 0 6px;
+                }
+
+                .sub-menu{
+                    position: absolute;
+                    top: 74px;
+                    width: 84%;
+                    background-color: gray;
+                    border-radius: 4px;
+                    padding: 30px;
                 }
             }
         }
