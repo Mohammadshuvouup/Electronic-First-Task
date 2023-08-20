@@ -17,6 +17,9 @@ nav {
   nav .nav-wrapper {
     display: flex;
     align-items: center; }
+    @media (min-width: 768px) {
+      nav .nav-wrapper .hamburger-icon {
+        display: none; } }
   nav .navbar-container {
     margin-left: auto;
     margin-right: auto;
@@ -28,6 +31,18 @@ nav {
   nav .main-navbar {
     display: flex;
     justify-content: center; }
+    @media (max-width: 767px) {
+      nav .main-navbar {
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-top: 40px;
+        background-color: rgba(0, 0, 0, 0.792);
+        padding: 30px;
+        display: none; }
+        nav .main-navbar.show {
+          display: flex; } }
     nav .main-navbar li {
       list-style-type: none; }
       nav .main-navbar li:not(:last-child) {
@@ -35,6 +50,9 @@ nav {
       nav .main-navbar li a {
         text-decoration: none;
         color: white; }
+      @media (max-width: 767px) {
+        nav .main-navbar li:not(:first-child) {
+          margin-top: 30px; } }
   nav .searchbar-wrapper {
     display: none;
     align-items: center; }
@@ -55,6 +73,9 @@ nav {
   nav .main-navbar-icons {
     margin-left: auto;
     display: flex; }
+    @media (max-width: 767px) {
+      nav .main-navbar-icons {
+        display: none; } }
     nav .main-navbar-icons .material-icons {
       cursor: pointer; }
       nav .main-navbar-icons .material-icons:not(:last-child) {
@@ -63,10 +84,13 @@ nav {
     background-color: rgba(0, 0, 0, 0.845);
     border-radius: 60px;
     padding: 0 0 0 20px;
-    display: flex;
+    display: none;
     align-items: center;
     gap: 20px;
     position: relative; }
+    @media (min-width: 768px) {
+      nav .menu-bar {
+        display: flex; } }
     nav .menu-bar.hide {
       display: none; }
     nav .menu-bar .menu-list {

@@ -1,5 +1,5 @@
 $breakpoints: (
-  'mobile':  200px,
+  'mobile':  767px,
   'tab': 768px,
   'desktop':  1200px
 ) !default;
@@ -20,5 +20,15 @@ $breakpoints: (
     @else {
       @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
           + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+  }
+
+@mixin response-to-mobileOnly() {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, 'mobile') {
+      // Prints a media query based on the value
+      @media (max-width: map-get($breakpoints, 'mobile')) {
+        @content;
+      }
     }
   }

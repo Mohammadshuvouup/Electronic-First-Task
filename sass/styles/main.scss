@@ -22,6 +22,12 @@ nav{
     .nav-wrapper{
         display: flex;
         align-items: center;
+
+        .hamburger-icon{
+            @include response-to('tab'){
+                display: none;
+            }
+        }
     }
 
     .navbar-container{
@@ -38,6 +44,22 @@ nav{
         display: flex;
         justify-content: center;
         
+        @include response-to-mobileOnly(){
+            flex-direction: column;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-top: 40px;
+            background-color: rgba(0, 0, 0, 0.792);
+            padding: 30px;
+            display: none;
+
+            &.show{
+                display: flex;
+            }
+
+        }
+        
         li{
             &:not(:last-child){
                 margin-right: 30px;
@@ -48,6 +70,12 @@ nav{
                 text-decoration: none;
                 color: white;
             }
+
+            @include response-to-mobileOnly(){
+                &:not(:first-child){
+                    margin-top: 30px;
+                } 
+            }
             
         }
     }
@@ -55,10 +83,11 @@ nav{
     .searchbar-wrapper{
         display: none;
         align-items: center;
+
         &.show{
             display: flex;
         }
-        
+
         .close-icon{
             cursor: pointer;
         }
@@ -81,6 +110,11 @@ nav{
     .main-navbar-icons{
         margin-left: auto;
         display: flex;
+
+        @include response-to-mobileOnly(){
+            display: none;
+        }
+
         .material-icons{
             cursor: pointer;
             &:not(:last-child){
@@ -93,10 +127,16 @@ nav{
         background-color: rgba(0, 0, 0, 0.845);
         border-radius: 60px;
         padding: 0 0 0 20px;
-        display: flex;
+        display: none;
         align-items: center;
         gap: 20px;
         position: relative;
+        // flex-direction: column;
+
+        @include response-to("tab"){
+        //   flex-direction: row;
+        display: flex;
+        }
 
         &.hide{
             display: none;
@@ -107,6 +147,7 @@ nav{
             display: flex;
             justify-content: center;
             padding: 0;
+            
             li{
                 list-style: none;
                 display: flex;
