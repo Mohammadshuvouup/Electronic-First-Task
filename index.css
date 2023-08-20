@@ -35,6 +35,23 @@ nav {
       nav .main-navbar li a {
         text-decoration: none;
         color: white; }
+  nav .searchbar-wrapper {
+    display: none;
+    align-items: center; }
+    nav .searchbar-wrapper.show {
+      display: flex; }
+    nav .searchbar-wrapper .close-icon {
+      cursor: pointer; }
+    nav .searchbar-wrapper .search-bar {
+      background-color: #ff4800;
+      border-radius: 60px;
+      position: relative;
+      border: 0;
+      padding: 10px 20px;
+      height: 36px;
+      width: 520px;
+      margin-right: 10px;
+      outline: 0; }
   nav .main-navbar-icons {
     margin-left: auto;
     display: flex; }
@@ -50,6 +67,8 @@ nav {
     align-items: center;
     gap: 20px;
     position: relative; }
+    nav .menu-bar.hide {
+      display: none; }
     nav .menu-bar .menu-list {
       display: flex;
       justify-content: center;
