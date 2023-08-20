@@ -1,5 +1,6 @@
-let menu_item = document.querySelectorAll('.menu-bar .menu-list>li');
+let menu_item = document.querySelectorAll('.menu-bar .menu-list .menu-list-item');
 
+// menu-item : expand submenu on clicking menu-item
 menu_item.forEach((li)=>{
     li.addEventListener("click",(event)=>{
         let parent = event.target;
@@ -10,6 +11,7 @@ menu_item.forEach((li)=>{
     })
 });
 
+// hide submenu if opened
 function hideSubMenu(){
     menu_item.forEach((li)=>{
        let sub_menu = li.querySelector(".sub-menu");
@@ -20,20 +22,16 @@ function hideSubMenu(){
     })
 }
 
-// document.addEventListener('click', (event)=> {
-//     let sub_menu = document.querySelector(".sub-menu.show");
-//     // let li = document.querySelector(".menu-list li");
-//     console.log(event.target)
+// close sub-menu when clicked outside the menu
+document.addEventListener('click', (event)=> {
+    let sub_menu = document.querySelector(".sub-menu.show");
 
-//     menu_item.forEach((li)=>{
-//         if (!li.querySelector(".sub-menu").contains(event.target) || !li.contains(event.target)) {
-//             if(sub_menu){
-//                 console.log(sub_menu)
-//                 sub_menu.classList.remove("show");
-//             }
-//         } 
-//      })  
-// });
+    if (sub_menu !== event.target && !event.target.classList.contains("menu-list-item")) {
+        if(sub_menu){
+            sub_menu.classList.remove("show"); 
+        }
+    }  
+});
   
 
 
