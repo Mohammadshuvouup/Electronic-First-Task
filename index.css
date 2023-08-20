@@ -69,7 +69,10 @@ nav {
       height: 36px;
       width: 520px;
       margin-right: 10px;
-      outline: 0; }
+      outline: 0;
+      color: rgba(255, 255, 255, 0.871); }
+      nav .searchbar-wrapper .search-bar::placeholder {
+        color: rgba(255, 255, 255, 0.765); }
   nav .main-navbar-icons {
     margin-left: auto;
     display: flex; }
